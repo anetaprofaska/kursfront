@@ -1,0 +1,62 @@
+body {
+  background-color: rgba(46, 139, 86, 0.997);
+  margin: 0;
+}
+
+.bodyHeader {
+  border: 5px dashed red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+
+h1 {
+  /* jeśli podajemy 2 wartości : poz y, poz x */
+  margin: 6px 10px;
+}
+
+ul {
+  border: 5px dashed yellow;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+li {
+  border: 5px dashed blue;
+}
+@media (max-width: 768px) {
+  ul {
+    display: none;
+  }
+}
+
+form {
+  border: 5px dashed red;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  gap: 5px;
+}
+input,
+textarea {
+  padding: 10px;
+}
+image {
+  max-width: 100%;
+}
+.wrapper {
+  border: 5px dashed pink;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+form {
+  width: 50%;
+}
+.wrapper header {
+  width: 100%;
+}
