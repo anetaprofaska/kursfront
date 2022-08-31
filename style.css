@@ -1,10 +1,25 @@
+:root {
+  --foreground-dark: #34128f;
+  --foreground-light: #9c78ff;
+  --background-dark: #8f8518;
+  --background-light: #dbd051;
+}
+* {
+  box-sizing: border-box;
+}
 body {
-  background-color: rgba(46, 139, 86, 0.997);
+  background-color: var(--background-dark);
   margin: 0;
+  min-height: 1000px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .bodyHeader {
-  border: 5px dashed red;
+  background-color: var(--background-light);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,21 +30,88 @@ body {
 h1 {
   /* jeśli podajemy 2 wartości : poz y, poz x */
   margin: 6px 10px;
+  /* clamp przyjmuje wartości - najmniejsza możliwa czionka (na ile najmniej
+    może się wyświetlić, średnia i największa) */
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+}
+
+#toggler {
+  display: none;
+}
+
+#toggler:checked ~ ul {
+  right: 0;
+}
+
+label {
+  /* border:5px dashed red; */
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0.15rem;
+}
+
+label div {
+  height: 2px;
+  width: 80%;
+  background-color: #000;
+  position: absolute;
+  transition: 0.2s;
+}
+
+label div:nth-child(1) {
+  top: calc(22% - 1px);
+}
+label div:nth-child(2) {
+  top: calc(50% - 1px);
+}
+label div:nth-child(3) {
+  top: calc(78% - 1px);
+}
+
+#toggler:checked ~ label div:nth-child(1) {
+  transform: rotate(45deg);
+  top: calc(50% - 1px);
+}
+#toggler:checked ~ label div:nth-child(2) {
+  opacity: 0;
+}
+#toggler:checked ~ label div:nth-child(3) {
+  transform: rotate(-45deg);
+  top: calc(50% - 1px);
 }
 
 ul {
-  border: 5px dashed yellow;
+  background-color: var(--foreground-light);
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding: 0.5rem;
   display: flex;
+  position: fixed;
+  right: -100%;
+  top: 2.1rem;
+  height: calc(100% - 2.1rem);
+  transition: 0.5s;
+  flex-direction: column;
 }
 
 li {
-  border: 5px dashed blue;
+  top: 0;
+  left: 0;
+  margin: 0.3rem;
 }
-@media (max-width: 768px) {
+
+/* warunek, wyłapujący wyświetlanie na komputerze */
+@media (min-width: 768px) {
   ul {
+    flex-direction: row;
+    position: static;
+    background-color: transparent;
+  }
+  label {
+    display: none;
     display: none;
   }
 }
@@ -41,21 +123,25 @@ form {
   padding: 15px;
   gap: 5px;
 }
+
 input,
 textarea {
   padding: 10px;
 }
-image {
+
+img {
   max-width: 100%;
 }
+
+form {
+  width: 50%;
+}
+
 .wrapper {
-  border: 5px dashed pink;
+  /* border:5px dashed pink; */
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-form {
-  width: 50%;
 }
 .wrapper header {
   width: 100%;

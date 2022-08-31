@@ -16,78 +16,91 @@
         <!-- ORDERED LIST - LISTA NUMEROWANA -->
         <!-- LIST ITEM - ELEMENT LISTY -->
         <!-- <ol>
-        <li>list item1 </li>
-        <li>list item2 </li>
-        <li>list item3 </li>
-      </ol> -->
+          <li>list item1 </li>
+          <li>list item2 </li>
+          <li>list item3 </li>
+        </ol> -->
+
+        <input type="checkbox" id="toggler" />
+        <label for="toggler">
+          <div></div>
+          <div></div>
+          <div></div>
+        </label>
 
         <!-- UNORDERED LIST - LISTA NIENUMEROWANA -->
         <ul>
-          <li>O MNIE</li>
-          <li>UMIĘTNOŚCI</li>
-          <li>KONTAKT</li>
-        </ul>
-      </nav>
-    </header>
+          <li>
+            <a href="#about">O MNIE</a>
+          </li>
+          <li>
+            <a href="#skills">UMIĘTNOŚCI</a>
+          </li>
+          <li>
+            <a href="#contact">KONTAKT</a>
+          </li>
+        </ul> 
+
+    </nav>
+  </header>
 
     <main class="wrapper">
       <header>
         <h2>O MNIE</h2>
       </header>
-
-      <img src="photo.jpg" />
+      <img src="photo.jpg" alt="PERSONAL IMAGE" />
     </main>
-
-    <article>
-      <header>
-        <h2>UMIĘTNOŚCI</h2>
-      </header>
-
-      <!-- im większy border tym grubsza tabelka -->
-      <table border="3">
-        <!-- nagłówek tabeli -->
-        <thead>
-          <!-- wiersz nagłówkowy -->
-          <tr>
-            <!-- TABLE HEADING komórka nagłówka -->
-            <th>LP.</th>
-            <th>TECHNOLOGIA</th>
-            <th>BIEGŁOŚĆ</th>
-          </tr>
-        </thead>
-
-        <!-- tabela właściwa (dane) -->
-        <tbody>
-          <!-- TABLE ROW (wiersz) -->
-          <tr>
-            <!-- TABLE DIVIDE (podział wiersza) -->
-            <td>1</td>
-            <td>HTML</td>
-            <td>⭐⭐⭐⭐⭐</td>
-          </tr>
-
-          <tr>
-            <td>2</td>
-            <td>CSS</td>
-            <td>⭐</td>
-          </tr>
-        </tbody>
-      </table>
-    </article>
-
-    <section class="wrapper">
-      <header>
-        <h2>KONTAKT</h2>
-      </header>
-
-      <form>
-        <input type="email" placeholder="EMAIL" />
-        <input type="text" placeholder="TYTUŁ" />
-        <textarea cols="21" rows="5"></textarea>
-        <input type="submit" value="WYŚLIJ" />
-      </form>
-    </section>
-
-    <footer>STOPKA</footer>
-  </body>
-</html>
+    <article class="wrapper">
+      <article id="skills" class="wrapper">
+        <header>
+          <h2>UMIĘTNOŚCI</h2>
+        </header>
+        <!-- im większy border tym grubsza tabelka -->
+        <table border="3">
+          <!-- nagłówek tabeli -->
+          <thead>
+            <!-- wiersz nagłówkowy -->
+            <tr>
+              <!-- TABLE HEADING komórka nagłówka -->
+              <th>LP. </th>
+              <th>TECHNOLOGIA</th>
+              <th>BIEGŁOŚĆ</th>
+            </tr>
+          </thead>
+          <!-- tabela właściwa (dane) -->
+          <tbody>
+            <!-- TABLE ROW (wiersz) -->
+            <tr>
+              <!-- TABLE DIVIDE (podział wiersza) -->
+              <td>1</td>
+              <td>HTML</td>
+              <td>⭐⭐⭐⭐⭐</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>CSS</td>
+              <td>⭐</td>
+            </tr>
+          </tbody>
+        </table>
+    
+      </article>
+    
+    
+      <section class="wrapper">
+      <section id="contact" class="wrapper">
+        <header>
+          <h2>KONTAKT</h2>
+        </header>
+        <form>
+          <input type="email" placeholder="EMAIL" />
+          <input type="text" placeholder="TYTUŁ">
+          <textarea cols="21" rows="5" placeholder="WIADOMOŚĆ"></textarea>
+          <input type="submit" value="WYŚLIJ">
+        </form>
+      </section>
+      <footer>
+        STOPKA
+      </footer>
+    </body>
+    </html>
