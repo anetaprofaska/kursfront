@@ -1,38 +1,33 @@
 :root {
-  --foreground-dark: #34128f;
+  --foreground-dark: #2a684b;
   --foreground-light: #9c78ff;
-  --background-dark: #8f8518;
-  --background-light: #dbd051;
+  --background-dark: #499913;
+  --background-light: #51dbc9;
+  --background-color: #991313;
 }
 * {
   box-sizing: border-box;
 }
+
 body {
-  background-color: var(--background-dark);
+  background-color: var(--background-light);
   margin: 0;
   min-height: 1000px;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
+  font-family: "PT Serif", serif;
 }
 
 .bodyHeader {
-  background-color: var(--background-light);
+  background-color: var(--background-dark);
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: sticky;
   top: 0;
 }
-
 h1 {
-  /* jeśli podajemy 2 wartości : poz y, poz x */
-  margin: 6px 10px;
-  /* clamp przyjmuje wartości - najmniejsza możliwa czionka (na ile najmniej
-    może się wyświetlić, średnia i największa) */
-  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  margin: 2px 9px;
+
+  font-size: clamp(1.3rem, 2.2vw, 1.3rem);
 }
 
 #toggler {
@@ -56,7 +51,7 @@ label {
 label div {
   height: 2px;
   width: 80%;
-  background-color: #000;
+  background-color: rgba(201, 57, 57, 0.986);
   position: absolute;
   transition: 0.2s;
 }
@@ -73,18 +68,18 @@ label div:nth-child(3) {
 
 #toggler:checked ~ label div:nth-child(1) {
   transform: rotate(45deg);
-  top: calc(50% - 1px);
+  top: calc(50% - 3px);
 }
 #toggler:checked ~ label div:nth-child(2) {
   opacity: 0;
 }
 #toggler:checked ~ label div:nth-child(3) {
   transform: rotate(-45deg);
-  top: calc(50% - 1px);
+  top: calc(50% - 3px);
 }
 
 ul {
-  background-color: var(--foreground-light);
+  background-color: var(--background-dark);
   list-style-type: none;
   margin: 0;
   padding: 0.5rem;
@@ -96,7 +91,9 @@ ul {
   transition: 0.5s;
   flex-direction: column;
 }
-
+a {
+  text-decoration: none;
+}
 li {
   top: 0;
   left: 0;
@@ -117,11 +114,15 @@ li {
 }
 
 form {
-  border: 5px dashed red;
+  border: 3px dashed rgb(70, 55, 73);
   display: flex;
   flex-direction: column;
-  padding: 15px;
-  gap: 5px;
+  padding: 10px;
+  gap: 4px;
+  background: var(--foreground-lighter);
+  box-shadow: var(--default-box-shadow);
+  border-radius: 0.5rem;
+  margin-top: 2rem;
 }
 
 input,
@@ -129,12 +130,8 @@ textarea {
   padding: 10px;
 }
 
-img {
-  max-width: 100%;
-}
-
 form {
-  width: 50%;
+  width: 65%;
 }
 
 .wrapper {
@@ -144,5 +141,76 @@ form {
   align-items: center;
 }
 .wrapper header {
+  width: 50%;
+}
+
+h2 {
+  text-align: center;
+}
+
+img {
+  max-width: 40%;
+  margin-top: 1rem;
+}
+
+.wrapper h2 {
+  margin: 5;
+}
+
+p {
+  margin: 2px;
+  text-align: center;
+}
+/* div na któym osadzamy tabelkę */
+.tableWrapper {
+  /* dajemy padding tylko z prawej i lewej strony */
+  padding: 0 0.6rem;
+  margin-top: 2rem;
+}
+
+table {
+  /* box shadow ze strony https://getcssscan.com/css-box-shadow-examples*/
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  /* max szerokość strony */
   width: 100%;
+  /* usuwamy granice pomiędzy wierszami i kolumnami */
+  border-collapse: collapse;
+}
+
+th {
+  /* ustawiamy kolor ze zmiennych */
+  background-color: var(--foreground-dark);
+  padding: 0.8rem;
+}
+
+td {
+  padding: 0.3rem;
+}
+
+tr {
+  background: var(--background-dark);
+}
+/* even|odd - co drugie dziecko */
+tr:nth-child(even) {
+  background: var(--background-color);
+}
+
+footer {
+  /* border:2px dashed red; */
+  margin-top: 3rem;
+  background-color: rgb(95, 76, 76);
+  color: rgb(255, 255, 255);
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 1rem;
+}
+footer ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+footer p {
+  margin: 0;
 }
